@@ -23,16 +23,16 @@ class Pin
         //pinvars
         $response = (new Client)->get("https://www.easports.com/fifa/ultimate-team/web-app/js/compiled_1.js")->getBody();
 
-        $this->taxv = $m[preg_match('/taxv:"(.+?)"/', $response, $m)];
-        $this->tidt = $m[preg_match('/tidt:"(.+?)"/', $response, $m)];
+        $this->taxv = "1.1";
+        $this->tidt = "easku";
 
-        $this->sku = $m[preg_match('/enums.SKU.FUT="(.+?)"/', $response, $m)];
+        $this->sku = "FUT20WEB";
         $this->rel = 'prod'; //REWRITE?
-        $this->gid = $m[preg_match('/gid:([0-9]+?)/', $response, $m)];
+        $this->gid = "0";
         $this->plat = 'web'; //REWRITE?
-        $this->et = $m[preg_match('/et:"(.+?)"/', $response, $m)];
-        $this->pidt = $m[preg_match('/pidt:"(.+?)"/', $response, $m)];
-        $this->v = $m[preg_match('/APP_VERSION="(.+?)"/', $response, $m)];
+        $this->et = "client";
+        $this->pidt = "persona";
+        $this->v = "20.0.0";
 
         //headers
         $this->headers = [
