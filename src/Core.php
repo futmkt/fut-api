@@ -140,7 +140,7 @@ class Core
             'query' => $params,
             'headers' => $this->clientHeaders,
             'on_stats' => function (TransferStats $stats) use (&$url) {
-                $url = (string)$stats->getEffectiveUri();
+                $url = (string) $stats->getEffectiveUri();
             }
         ]);
         if ($url !== 'https://www.easports.com/fifa/ultimate-team/web-app/auth.html') {
@@ -162,7 +162,7 @@ class Core
                 'form_params' => $data,
                 'headers' => $this->clientHeaders,
                 'on_stats' => function (TransferStats $stats) use (&$url) {
-                    $url = $stats->getEffectiveUri();
+                    $url = (string) $stats->getEffectiveUri();
                 }
             ])->getBody();
             if (strpos($response, "'successfulLogin': false") !== false) {
@@ -173,7 +173,7 @@ class Core
             if (strpos($response, "var redirectUri") !== false) {
                 $response = $this->client->get($url . "&_eventId=end", [
                     'on_stats' => function (TransferStats $stats) use (&$url) {
-                        $url = $stats->getEffectiveUri();
+                        $url = (string) $stats->getEffectiveUri();
                     },
                     'headers' => $this->clientHeaders
                 ])->getBody();
@@ -187,7 +187,7 @@ class Core
                     'form_params' => $params,
                     'headers' => $this->clientHeaders,
                     'on_stats' => function (TransferStats $stats) use (&$url) {
-                        $url = $stats->getEffectiveUri();
+                        $url = (string) $stats->getEffectiveUri();
                     }
                 ])->getBody();
             }
@@ -207,7 +207,7 @@ class Core
                     ],
                     'headers' => $this->clientHeaders,
                     'on_stats' => function (TransferStats $stats) use (&$url) {
-                        $url = $stats->getEffectiveUri();
+                        $url = (string) $stats->getEffectiveUri();
                     }
                 ])->getBody();
                 if (strpos($response, 'Incorrect code entered') !== false || strpos($response, 'Please enter a valid security code') !== false) {
@@ -223,7 +223,7 @@ class Core
                         ],
                         'headers' => $this->clientHeaders,
                         'on_stats' => function (TransferStats $stats) use (&$url) {
-                            $url = $stats->getEffectiveUri();
+                            $url = (string) $stats->getEffectiveUri();
                         }
                     ])->getBody();
                 }

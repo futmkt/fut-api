@@ -25,7 +25,7 @@ curl -sS https://getcomposer.org/installer | php
 Next, run the Composer command to install the latest stable version of Guzzle:
 
 ```bash
-composer require mynameisvasco/fut-api
+composer require futmkt/fut-api
 ```
 
 After installing, you need to require Composer's autoloader:
@@ -38,6 +38,11 @@ DS File
 =============
 
 ds.js is responsible for generate the new ds header for auth. Please set env('DS_PATH') before use the script.
+
+Example:
+```dotenv
+DS_PATH = "/path/to/directory" # path to directory, where is file located
+```
 
 
 Documentation
