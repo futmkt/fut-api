@@ -39,6 +39,11 @@ DS File
 
 ds.js is responsible for generate the new ds header for auth. Please set env('DS_PATH') before use the script.
 
+Example:
+```dotenv
+DS_PATH = "/path/to/directory" # path to directory, where is file located
+```
+
 
 Documentation
 =============
